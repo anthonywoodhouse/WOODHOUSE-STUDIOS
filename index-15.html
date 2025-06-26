@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WOODHOUSE STUDIOS</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: sans-serif;
+      text-align: center;
+      padding-top: 80px;
+    }
+    h1 {
+      font-size: 36px;
+    }
+    select, button {
+      font-size: 18px;
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    select {
+      background-color: #333;
+      color: white;
+    }
+    button {
+      background-color: #1db954;
+      color: white;
+    }
+    button:hover {
+      background-color: #1ed760;
+    }
+  </style>
+</head>
+<body>
+  <h1>WOODHOUSE STUDIOS</h1>
+
+  <label for="songSelect">Choose a song:</label>
+  <select id="songSelect">
+    <option value="https://dl.dropboxusercontent.com/scl/fi/2drcjg9i6o3tp44w7hf98/your-name-is-great-Eb-loop.mp3?rlkey=56emcnfq9sejkjhr0xtwauewm&st=mvp9iegq">Your Name Is Great (Eb)</option>
+    <option value="https://dl.dropboxusercontent.com/scl/fi/9hrcsf9y8405287ewxqfy/in-your-presence-FMajor-loop.mp3?rlkey=limazt9cnwgodv89i2jxbjrj1&st=wbnq9iv0">In Your Presence (F Major)</option>
+    <option value="https://dl.dropboxusercontent.com/scl/fi/18c98g2x72pe2wyhki80u/your-all-i-need-C-loop.mp3?rlkey=432tdkxgr6uw4vpirx2loc9z1&st=0wf37c7b">You're All I Need (C)</option>
+  </select>
+
+  <br/>
+  <button onclick="playSelected()">Play</button>
+  <button onclick="stopAudio()">Stop</button>
+
+  <script>
+    let audio = new Audio();
+    audio.loop = true;
+
+    function playSelected() {
+      const url = document.getElementById('songSelect').value;
+      if (audio.src !== url) {
+        audio.src = url;
+      }
+      audio.play();
+    }
+
+    function stopAudio() {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+  </script>
+</body>
+</html>
