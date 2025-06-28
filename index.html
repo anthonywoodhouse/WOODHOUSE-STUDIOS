@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Worship Loops - Woodhouse Studios</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #0a0a0a;
+      color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding-bottom: 4rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-top: 2rem;
+      color: #c3a5ff;
+    }
+
+    p.tagline {
+      font-size: 1.1rem;
+      color: #aaa;
+      margin-bottom: 3rem;
+    }
+
+    .loop-list {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .loop {
+      background-color: #1a1a1a;
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 0 10px rgba(106, 13, 173, 0.2);
+    }
+
+    .loop h2 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: #f0e6ff;
+    }
+
+    .buttons {
+      margin-top: 0.8rem;
+    }
+
+    .buttons a {
+      display: inline-block;
+      margin: 0 0.5rem;
+      padding: 0.5rem 1.2rem;
+      background-color: #6a0dad;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background-color 0.2s ease;
+    }
+
+    .buttons a:hover {
+      background-color: #8a2be2;
+    }
+
+    footer {
+      margin-top: 4rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <h1>Woodhouse Studios Worship Loops</h1>
+  <p class="tagline">Worship loops for the kingdom — all original, all anointed.</p>
+
+  <div class="loop-list">
+    <!-- Repeat block for each loop -->
+    ${[
+      "Closer to you",
+      "Your all I need",
+      "In his safety",
+      "This love",
+      "He is the reason",
+      "In your presence",
+      "He will",
+      "Forever",
+      "He loves us",
+      "Magnify",
+      "Your name is Great",
+      "Mighty God",
+      "Light in the darkness",
+      "We’ve come to worship",
+      "He is holy",
+      "Glory to your name",
+      "Your grace",
+      "Redeemed",
+      "You covered me",
+      "Faith"
+    ].map((title, i) => `
+      <div class="loop">
+        <h2>${i + 1}. ${title}</h2>
+        <div class="buttons">
+          <a href="#" target="_blank">🎧 Listen</a>
+          <a href="#" target="_blank">💵 Buy</a>
+        </div>
+      </div>
+    `).join("")}
+  </div>
+
+  <footer>
+    &copy; ${new Date().getFullYear()} Woodhouse Studios. All rights reserved.
+  </footer>
+</body>
+</html>
