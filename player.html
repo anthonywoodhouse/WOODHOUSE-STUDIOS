@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your All I Need - Woodhouse</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #0b0b0b, #1a001a);
+      color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.2em;
+    }
+
+    h2 {
+      font-weight: 300;
+      font-size: 1.2em;
+      color: #aaa;
+      margin-bottom: 1.5em;
+    }
+
+    button {
+      background-color: #4b0082;
+      border: none;
+      color: white;
+      padding: 1em 2em;
+      font-size: 1em;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #6a0dad;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #6a0dad;
+      transform: scale(1.05);
+    }
+
+    .glow {
+      text-shadow: 0 0 8px #ffffff, 0 0 16px #6a0dad;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="glow">Your All I Need</h1>
+  <h2>by Woodhouse</h2>
+
+  <button id="toggleButton">Play</button>
+  <audio id="track" src="https://www.dropbox.com/scl/fi/64kvceegeww6jgsnbj3ws/piano.wav?rlkey=kvava0489mz0s99wmqi96dwxe&dl=1" type="audio/wav"></audio>
+
+  <script>
+    const button = document.getElementById('toggleButton');
+    const track = document.getElementById('track');
+
+    let isPlaying = false;
+
+    button.addEventListener('click', () => {
+      if (!isPlaying) {
+        track.play();
+        button.textContent = 'Pause';
+      } else {
+        track.pause();
+        button.textContent = 'Play';
+      }
+      isPlaying = !isPlaying;
+    });
+  </script>
+</body>
+</html>
